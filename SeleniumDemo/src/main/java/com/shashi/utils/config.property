@@ -1,0 +1,3 @@
+
+//Specify browser to use chrome/firefox/IE
+useBrowser=chrome
