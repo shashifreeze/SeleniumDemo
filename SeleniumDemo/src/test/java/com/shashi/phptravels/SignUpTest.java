@@ -8,12 +8,19 @@ import com.phptravels.pages.PhpTravelsHomePage;
 import com.phptravels.pages.PhpTravelsLoginPage;
 import com.phptravels.pages.PhpTravelsSignUpPage;
 import com.shashi.main.BaseTest;
+import com.shashi.utils.CSVConfig;
 import com.shashi.utils.ExcelConfig;
 import com.shashi.utils.MyUtils;
 
 public class SignUpTest extends BaseTest{
 	
-	@Test(dataProvider="phptravels")
+	@DataProvider(name="SignUpTest")
+	public String [][] getTestData()
+	{	
+		return CSVConfig.getCSVData(MyUtils.getProjectPath()+"\\testDataInput\\SignUpTest.csv");
+	}
+	
+	@Test(dataProvider = "SignUpTest")
 	public void signUpTest(String fName,String lName,String email,String phone,String password)
 	{
 		PhpTravelsHomePage homePage= new PhpTravelsHomePage(driver);
@@ -30,6 +37,7 @@ public class SignUpTest extends BaseTest{
 		homePage.clickAccount();
 		Assert.assertTrue("SignUp Successful",homePage.isLogoutDisplayed());
 		
+		
 	}	
-
+	
 }

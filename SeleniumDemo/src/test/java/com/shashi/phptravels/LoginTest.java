@@ -1,15 +1,25 @@
 package com.shashi.phptravels;
 
+import org.junit.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.phptravels.pages.PhpTravelsHomePage;
 import com.phptravels.pages.PhpTravelsLoginPage;
 import com.shashi.main.BaseTest;
+import com.shashi.utils.CSVConfig;
+import com.shashi.utils.MyUtils;
 
 public class LoginTest extends BaseTest{
 	
-	@Test()
-	public void loginTest()
+	@DataProvider(name="phptravels")
+	public String [][] getTestData()
+	{
+		return CSVConfig.getCSVData(MyUtils.getProjectPath()+"\\testDataInput\\LoginTest.csv");
+	}
+	
+	@Test(dataProvider = "phptravels")
+	public void loginTest(String email,String password)
 	{
 		PhpTravelsHomePage homePage= new PhpTravelsHomePage(driver);
 		PhpTravelsLoginPage loginPage = new PhpTravelsLoginPage(driver);
@@ -20,8 +30,10 @@ public class LoginTest extends BaseTest{
 		//clicking on login link on homePage
 		homePage.clickLogin();
 		//login into the account
-		loginPage.login("php1@qa.com", "Password@123");
+		loginPage.login(email, password);
 		//verify login details
+		homePage.clickAccount();
+		Assert.assertTrue("login Successful",homePage.isLogoutDisplayed());
 		
 	}	
 }

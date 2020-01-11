@@ -11,10 +11,10 @@ public class PhpTravelsLoginPage {
 	}
 	
 	// All elements of home page
-	By emailTB = By.xpath("//*[@id='toggleStyle04-collapseOne']/div/div/div[3]/div/div[1]/input");
-	By passwordTB = By.xpath("//*[@id='toggleStyle04-collapseOne']/div/div/div[3]/div/div[2]/input");
-	By rememberMe = By.xpath("//*[@id='toggleStyle04-collapseOne']/div/div/div[3]/div/div[3]");
-	By loginButton = By.xpath("//*[@id='loginfrm']/button");
+	By emailTB = By.xpath("//input[@type='email'][@name='username']");
+	By passwordTB = By.xpath("//input[@type='password'][@name='password']");
+	By rememberMe = By.xpath("//input[@type='checkbox'][@name='remember']");
+	By loginButton = By.xpath("//button[@type='submit'][contains(text(),'Login')]");
 	
 	//Methods to perform actions
 	public void login(String email,String password)

@@ -17,16 +17,31 @@ public class PhpTravelsHomePage {
 		wait = new WebDriverWait(driver, 20);
 	}
 	
+	/*
+	 * Relative xpaths for home button
+	 * 
+		//a[@title='home']
+		//a[@href='https://www.phptravels.net/'] [@title='home']
+		//a[@href='https://www.phptravels.net/' and @title='home']
+		//a[text()='Home']
+		//*[@id="mobileMenuMain"]//a[@title='home']
+		//a[contains(text(),'Ho')]
+		//a[contains(@title,'ho')]
+		//a[contains(@href,'php') and @title='home']
+		//a[starts-with(@title,'hom')]
+	 * 
+	 */
+	
 	// All elements of home page
-	By home = By.xpath("//*[@id='mobileMenuMain']/nav/ul[1]/li/a");
-	By flight = By.xpath("//*[@id='mobileMenuMain']/nav/ul[2]/li[1]/a");
-	By tours = By.xpath("//*[@id='mobileMenuMain']/nav/ul[2]/li[2]/a");
-	By contact = By.xpath("//*[@id='mobileMenuMain']/nav/ul[2]/li[3]/ul/li[1]/a");
-	By aboutUs = By.xpath("//*[@id='mobileMenuMain']/nav/ul[2]/li[3]/ul/li[2]/a");
-	By login = By.xpath("//*[@id='header-waypoint-sticky']/div[1]/div/div/div[2]/div/ul/li[3]/div/div/div/a[1]");
-	By signUp = By.xpath("//*[@id='header-waypoint-sticky']/div[1]/div/div/div[2]/div/ul/li[3]/div/div/div/a[2]");
-	By myAccount = By.xpath("//*[@class='dropdown dropdown-login dropdown-tab']");
-	By logOut = By.xpath("//*[@class='dropdown dropdown-login dropdown-tab show']/div/div/a[2]");
+	By home = By.xpath("//a[@href='https://www.phptravels.net/'] [@title='home']");
+	By flight = By.xpath("//ul[@class='main-nav']//a[contains(text(),'Flights')]");
+	By tours = By.xpath("//ul[@class='main-nav']//a[contains(text(),'Tours')]");
+	By contact = By.xpath("//a[contains(text(),'Contact')]");
+	By aboutUs = By.xpath("//a[contains(text(),'About Us')]");
+	By login = By.xpath("//a[@class='dropdown-item active tr' and contains(text(),'Login')]");
+	By signUp = By.xpath("//a[@class='dropdown-item tr' and contains(text(),'Sign Up')]");
+	By myAccount = By.xpath("//a[@id='dropdownCurrency' ]//i[@class='bx bx-user']");
+	By logOut = By.xpath("//a[@class='dropdown-item tr' and contains(text(),'Logout')]");
 	
 	//Methods to perform actions
 	public void clickLogin()

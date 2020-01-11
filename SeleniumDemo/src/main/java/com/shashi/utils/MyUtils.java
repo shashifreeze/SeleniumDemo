@@ -16,10 +16,16 @@ public class MyUtils {
 		int ranNo = r.nextInt(10000);
 		return "Php" + ranNo + "@qa.com";
 	}
+	
+	public static String getProjectPath()
+	{
+		return System.getProperty("user.dir");
+	}
 
 	public static String getPopertyValue(String key) {
+		
 		try{
-			FileReader reader = new FileReader("C:\\Users\\skuma545\\shashi\\git\\SeleniumDemo\\src\\main\\java\\com\\shashi\\utils\\config.property");
+			FileReader reader = new FileReader(getProjectPath()+"\\resources\\config\\config.property");
 			Properties p = new Properties();
 			p.load(reader);
 			String value =  p.getProperty(key);

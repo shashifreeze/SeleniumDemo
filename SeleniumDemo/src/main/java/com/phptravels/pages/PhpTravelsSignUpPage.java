@@ -15,13 +15,13 @@ public class PhpTravelsSignUpPage {
 	}
 	
 	// All elements of home page
-	By firstNameTB = By.xpath("//*[@id='headersignupform']/div[3]/input");
-	By lastNameTB = By.xpath("//*[@id='headersignupform']/div[4]/input");
-	By mobileNoTB = By.xpath("//*[@id='headersignupform']/div[5]/input");
-	By emailTB = By.xpath("//*[@id='headersignupform']/div[6]/input");
-	By passwordTB = By.xpath("//*[@id='headersignupform']/div[7]/input");
-	By confPassTB = By.xpath("//*[@id='headersignupform']/div[8]/input");
-	By signUpButton = By.xpath("//*[@id='headersignupform']/div[9]/button");
+	By firstNameTB = By.xpath("//input[@type='text'][@name='firstname']");
+	By lastNameTB = By.xpath("//input[@type='text'][@name='lastname']");
+	By mobileNoTB = By.xpath("//input[@type='text'][@name='phone']");
+	By emailTB = By.xpath("//input[@type='text'][@name='email']");
+	By passwordTB = By.xpath("//input[@type='password'][@name='password']");
+	By confPassTB = By.xpath("//input[@type='password'][@name='confirmpassword']");
+	By signUpButton = By.xpath("//button[@type='submit']");
 	
 	//Methods to perform actions
 	public void enterDetailsDoSignUp(String firstName,String lastName,String mobNum,String email,String password)

@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.shashi.utils.CSVConfig;
 import com.shashi.utils.ExcelConfig;
 import com.shashi.utils.MyUtils;
 /*
@@ -29,19 +30,22 @@ public class BaseTest {
 	public void setUp() {
 		System.out.println("@BeforeSuite--setup");
 	    browser = MyUtils.getPopertyValue("useBrowser");
+	    String path = MyUtils.getProjectPath();
 		if(browser.equalsIgnoreCase("chrome"))
-		{
-			System.setProperty("webdriver.chrome.driver","D:\\SeleniumWorkplace\\chromedriver.exe");
-			//System.setProperty("webdriver.chrome.driver","/SeleniumDemo/src/main/resources/chromedriver.exe");
+		{												  
+			System.setProperty("webdriver.chrome.driver",path+"\\resources\\drivers\\chromedriver.exe");
+
 		}else if(browser.equalsIgnoreCase("firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", "D:\\SeleniumWorkplace\\GeckoDriver.exe");
+			System.setProperty("webdriver.gecko.driver", path+"\\resources\\drivers\\GeckoDriver.exe");
 			capabilities = DesiredCapabilities.firefox();
 			capabilities.setCapability("marionette",true);
 			driver= new FirefoxDriver(capabilities);
+			
 		}else if(browser.equalsIgnoreCase("IE")){
 			
 		}	
+		
 	}
 	
 	@BeforeMethod
@@ -50,17 +54,18 @@ public class BaseTest {
 		if(browser.equalsIgnoreCase("chrome"))
 		{
 			driver = new ChromeDriver();
+			
 		}else if(browser.equalsIgnoreCase("firefox"))
 		{
 			driver= new FirefoxDriver(capabilities);
+			
 		}else if(browser.equalsIgnoreCase("IE")){
 			
-		}
-		
+		}	
 		driver.manage().deleteAllCookies();
 		driver.manage().window().maximize();
-		driver.manage().timeouts().pageLoadTimeout(40,TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(50,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 	}
 
 	@AfterMethod
@@ -70,10 +75,4 @@ public class BaseTest {
 		driver.close();
 	}
 	
-	@DataProvider(name="phptravels")
-	public String [][] getTestData()
-	{
-		ExcelConfig exc= new ExcelConfig("C:\\Users\\skuma545\\shashi\\git\\SeleniumDemo\\testDataInput\\input.xlsx");
-	    return	exc.getAllData(0);
-	}
 }

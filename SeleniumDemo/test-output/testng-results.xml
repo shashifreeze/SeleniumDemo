@@ -1,25 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="37862" started-at="2020-01-10T10:10:57Z" finished-at="2020-01-10T10:11:35Z">
+  <suite name="Default suite" duration-ms="49707" started-at="2020-01-11T12:50:08Z" finished-at="2020-01-11T12:50:58Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="37862" started-at="2020-01-10T10:10:57Z" finished-at="2020-01-10T10:11:35Z">
+    <test name="Default test" duration-ms="49707" started-at="2020-01-11T12:50:08Z" finished-at="2020-01-11T12:50:58Z">
       <class name="com.shashi.phptravels.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.shashi.phptravels.LoginTest@33ce2c]" name="setUp" is-config="true" duration-ms="9" started-at="2020-01-10T15:40:57Z" finished-at="2020-01-10T15:40:57Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.shashi.phptravels.LoginTest@4667ae56]" name="setUp" is-config="true" duration-ms="46" started-at="2020-01-11T12:50:08Z" finished-at="2020-01-11T12:50:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.shashi.phptravels.LoginTest@33ce2c]" name="launchBrowser" is-config="true" duration-ms="9209" started-at="2020-01-10T15:40:57Z" finished-at="2020-01-10T15:41:06Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.shashi.phptravels.LoginTest@4667ae56]" name="launchBrowser" is-config="true" duration-ms="13464" started-at="2020-01-11T12:50:08Z" finished-at="2020-01-11T12:50:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.shashi.phptravels.LoginTest@33ce2c]" name="loginTest" duration-ms="23152" started-at="2020-01-10T15:41:06Z" finished-at="2020-01-10T15:41:30Z">
+        <test-method status="PASS" signature="loginTest(java.lang.String, java.lang.String)[pri:0, instance:com.shashi.phptravels.LoginTest@4667ae56]" name="loginTest" duration-ms="31518" started-at="2020-01-11T12:50:22Z" data-provider="phptravels" finished-at="2020-01-11T12:50:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[s13@qa.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Password@123]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.shashi.phptravels.LoginTest@33ce2c]" name="closeBrowser" is-config="true" duration-ms="5493" started-at="2020-01-10T15:41:30Z" finished-at="2020-01-10T15:41:35Z">
+        <test-method status="PASS" signature="closeBrowser()[pri:0, instance:com.shashi.phptravels.LoginTest@4667ae56]" name="closeBrowser" is-config="true" duration-ms="4603" started-at="2020-01-11T12:50:53Z" finished-at="2020-01-11T12:50:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

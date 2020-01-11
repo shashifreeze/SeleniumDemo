@@ -33,16 +33,20 @@ public class ExcelConfig {
 	public String[][] getAllData(String sheetName)
 	{
 		XSSFSheet sheet = wb.getSheet(sheetName);
-		String [][]data = {};
 		int rowCount = sheet.getLastRowNum();
-		for(int row=1;row<rowCount;row++)
-		{
-			int cellCount=sheet.getRow(row).getLastCellNum();
+		int cellCount=sheet.getRow(0).getLastCellNum();
+		String [][]data = new String[rowCount][cellCount];
+		//System.out.println("rowCount:"+rowCount);
+		//System.out.println("cellCount:"+cellCount);
+		for(int row=1;row<=rowCount;row++)
+		{			
 			for(int cell=0;cell<cellCount;cell++)
 			{
-				data[row][cell]=sheet.getRow(row).getCell(cell).getStringCellValue();
-			}
-		}	
+				data[row-1][cell]=sheet.getRow(row).getCell(cell).getStringCellValue();
+				//System.out.println("cellData: "+data[row-1][cell]);
+			}			
+		}
+		
 		return data;
 	}
 	
