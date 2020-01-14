@@ -2,10 +2,11 @@ package com.phptravels.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 /*
  * @author-Shashi Kumar 
- * 
+ * @page link - https://www.phptravels.net/
  */
 public class PhpTravelsHomePage {
 
@@ -44,40 +45,37 @@ public class PhpTravelsHomePage {
 	By logOut = By.xpath("//a[@class='dropdown-item tr' and contains(text(),'Logout')]");
 	
 	//Methods to perform actions
-	public void clickLogin()
+	public WebElement login()
 	{
-		driver.findElement(login).click();
+		return driver.findElement(login);
 	}	
-	public void clickLogout()
+	public WebElement logout()
 	{
-		driver.findElement(logOut).click();
+		return driver.findElement(logOut);
 	}
-	public boolean isLogoutDisplayed()
+	
+	public WebElement account()
 	{
-		return driver.findElement(logOut).isDisplayed();
+		return driver.findElement(myAccount);
 	}
-	public void clickAccount()
+	public WebElement signUp()
 	{
-		driver.findElement(myAccount).click();
+		return driver.findElement(signUp);
 	}
-	public void clickSignUp()
+	public WebElement aboutUs()
 	{
-		driver.findElement(signUp).click();
+		return driver.findElement(aboutUs);
 	}
-	public void clickAboutUs()
+	public WebElement contact()
 	{
-		driver.findElement(aboutUs).click();
+		return driver.findElement(contact);
 	}
-	public void clickContact()
+	public WebElement tours()
 	{
-		driver.findElement(contact).click();
+		return driver.findElement(tours);
 	}
-	public void clickTours()
+	public WebElement home()
 	{
-		driver.findElement(tours).click();
-	}
-	public void clickHome()
-	{
-		driver.findElement(home).click();
+		return driver.findElement(home);
 	}
 }

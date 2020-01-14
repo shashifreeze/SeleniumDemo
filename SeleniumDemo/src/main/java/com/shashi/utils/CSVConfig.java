@@ -32,7 +32,7 @@ public class CSVConfig {
 	        } 
 	        
 	        numberOfRows = list.size();
-	        System.out.println("numberOfRows="+numberOfRows+",numberOfColumns="+numberOfColumns);
+	        //System.out.println("numberOfRows="+numberOfRows+",numberOfColumns="+numberOfColumns);
 	        String [][]data = new String[numberOfRows][numberOfColumns];
    
 	        for(int i=0;i<list.size();i++)

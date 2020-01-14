@@ -11,7 +11,7 @@ public class PhptravelsAccountManager {
 	}
 	
 	//verify whether already a user is logged in or not if logged in then log out
-	public boolean verifyAlreadyLoggedIn()
+	public boolean verifySuccessfulLoggedIn()
 	{
 		return true;
 	}

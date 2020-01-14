@@ -26,14 +26,14 @@ public class LoginTest extends BaseTest{
 		//launching the site
 		driver.get("https://www.phptravels.net/");
 		//clicking on account link on homePage
-		homePage.clickAccount();
+		homePage.account().click();;
 		//clicking on login link on homePage
-		homePage.clickLogin();
+		homePage.login().click();;
 		//login into the account
 		loginPage.login(email, password);
 		//verify login details
-		homePage.clickAccount();
-		Assert.assertTrue("login Successful",homePage.isLogoutDisplayed());
+		homePage.account().click();;
+		Assert.assertTrue("login Successful",homePage.logout().isDisplayed());
 		
 	}	
 }

@@ -20,7 +20,7 @@ public class SignUpTest extends BaseTest{
 		return CSVConfig.getCSVData(MyUtils.getProjectPath()+"\\testDataInput\\SignUpTest.csv");
 	}
 	
-	@Test(dataProvider = "SignUpTest")
+	@Test(invocationCount=2,dataProvider = "SignUpTest")
 	public void signUpTest(String fName,String lName,String email,String phone,String password)
 	{
 		PhpTravelsHomePage homePage= new PhpTravelsHomePage(driver);
@@ -28,14 +28,14 @@ public class SignUpTest extends BaseTest{
 		//launching the site
 		driver.get("https://www.phptravels.net/");
 		//clicking on account link on homePage
-		homePage.clickAccount();
+		homePage.account().click();
 		//clicking on login link on homePage
-		homePage.clickSignUp();
+		homePage.signUp().click();;
 		//login into the account
-		signUpPage.enterDetailsDoSignUp(fName,lName, phone, email, password);
+		signUpPage.enterDetailsDoSignUp(fName,lName, phone, MyUtils.getRandomEmail(), password);
 		//verify successful signUp
-		homePage.clickAccount();
-		Assert.assertTrue("SignUp Successful",homePage.isLogoutDisplayed());
+		homePage.account().click();
+		Assert.assertTrue("SignUp Successful",homePage.logout().isDisplayed());	
 		
 		
 	}	
