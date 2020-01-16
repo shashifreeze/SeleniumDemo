@@ -80,7 +80,7 @@ public class BaseTest {
 	public void closeBrowser() {
 		System.out.println("@AfterMethod--closing Browser");
 		driver.manage().deleteAllCookies();
-		driver.close();
+		driver.quit();
 	}
 	
 	@AfterClass
