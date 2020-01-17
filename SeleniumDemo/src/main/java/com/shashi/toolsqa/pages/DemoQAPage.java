@@ -16,8 +16,7 @@ public class DemoQAPage {
 	{
 		this.driver = driver;
 	}
-	
-	
+
 	By interactions = By.xpath("//a[@title='Interactions' and @href='https://demoqa.com/category/interactions/']");
 	By widget = By.xpath("//a[@title='Widgets' and @href='https://demoqa.com/category/widgets/']");
 	By sortable = By.xpath("//a[@href='https://demoqa.com/sortable/' and contains(.,'Sortable')]");
@@ -83,9 +82,5 @@ public class DemoQAPage {
 	public WebElement toolTip()
 	{
 		return driver.findElement(toolTip);
-	}
-	
-	
-	
-		
+	}	
 }
