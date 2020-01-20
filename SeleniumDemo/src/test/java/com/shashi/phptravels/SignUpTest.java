@@ -7,12 +7,12 @@ import org.testng.annotations.Test;
 import com.phptravels.pages.PhpTravelsHomePage;
 import com.phptravels.pages.PhpTravelsLoginPage;
 import com.phptravels.pages.PhpTravelsSignUpPage;
-import com.shashi.main.BaseTest;
+import com.shashi.main.WebBaseTest;
 import com.shashi.utils.CSVConfig;
 import com.shashi.utils.ExcelConfig;
 import com.shashi.utils.MyUtils;
 
-public class SignUpTest extends BaseTest{
+public class SignUpTest extends WebBaseTest{
 	
 	@DataProvider(name="SignUpTest")
 	public String [][] getTestData()

@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 
 import com.phptravels.pages.PhpTravelsHomePage;
 import com.phptravels.pages.PhpTravelsLoginPage;
-import com.shashi.main.BaseTest;
+import com.shashi.main.WebBaseTest;
 import com.shashi.utils.CSVConfig;
 import com.shashi.utils.MyUtils;
 
-public class LoginTest extends BaseTest{
+public class LoginTest extends WebBaseTest{
 	
 	@DataProvider(name="phptravels")
 	public String [][] getTestData()

@@ -2,11 +2,11 @@ package com.shashi.toolsqa;
 
 import org.testng.annotations.Test;
 
-import com.shashi.main.BaseTest;
+import com.shashi.main.WebBaseTest;
 import com.shashi.toolsqa.pages.DemoQAPage;
 import com.shashi.toolsqa.pages.WindowSwitchPage;
 
-public class SwitchWindowDemo extends BaseTest {
+public class SwitchWindowDemo extends WebBaseTest {
 
 	@Test
 	public void switchWindow() {

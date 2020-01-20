@@ -22,7 +22,7 @@ import com.shashi.utils.MyUtils;
  * @Author-Shashi Kumar
  * Base test for all the tests 
  */
-public class BaseTest {
+public class WebBaseTest {
 	
 	public WebDriver driver;
 	String browser;
